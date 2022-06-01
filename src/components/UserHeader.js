@@ -1,13 +1,20 @@
-import { useGetUserProfile } from "../hooks/useGetUserPosts";
+import defaultAvatar from "../usuario.png";
 
-export const UserHeader = () => {
+export const UserHeader = ({ userProfile }) => {
+  console.log(userProfile);
   return (
     <header>
-      {/*      <img src={user.avatar} alt="avatar" />
+      <img
+        src={userProfile.image ? userProfile.image : defaultAvatar}
+        alt="avatar"
+        height="50px"
+        width="50px"
+      />{" "}
+      <span>Posts {userProfile.countPosts}</span>
       <h2>
-        {user.name} {user.surmane}
+        {userProfile.name} {userProfile.surname}
       </h2>
-      <h3>{user.title}</h3> */}
+      <h3>{userProfile.intro}</h3>
     </header>
   );
 };

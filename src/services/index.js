@@ -18,5 +18,5 @@ export const getUserProfile = async (userName) => {
     throw new Error("no se ha podido realizar la peticion al servidor");
   }
 
-  return json;
+  return json.message;
 };
