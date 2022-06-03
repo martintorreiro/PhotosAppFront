@@ -1,3 +1,4 @@
+import { Post } from "../components/Post/Post";
 import { usePosts } from "../hooks/usePosts";
 
 export const Home = () => {
@@ -10,5 +11,11 @@ export const Home = () => {
     return <p>{error}</p>;
   }
 
-  return <p>HOME PAGE </p>;
+  return (
+    <section>
+      {posts.map((post) => {
+        return <Post post={post} key={post.postId} />;
+      })}
+    </section>
+  );
 };

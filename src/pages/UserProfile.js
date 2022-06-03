@@ -17,8 +17,8 @@ export const UserProfile = () => {
 
   return (
     <section>
-      <UserHeader userProfile={userProfile} />
-      <UserBody posts={userProfile.posts} />
+      {/* <UserHeader userProfile={userProfile} /> */}
+      <UserBody posts={userProfile} />
     </section>
   );
 };

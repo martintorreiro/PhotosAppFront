@@ -11,7 +11,7 @@ import { UserProfile } from "./pages/UserProfile";
 
 function App() {
   return (
-    <main>
+    <div className="container">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,7 +22,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
-    </main>
+    </div>
   );
 }
 

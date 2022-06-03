@@ -18,6 +18,7 @@ export const useGetUserProfile = (userName) => {
         setLoading(false);
       }
     };
+
     getUser();
   }, [userName]);
   return { userProfile, loading, error };
