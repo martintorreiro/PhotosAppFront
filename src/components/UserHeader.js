@@ -10,7 +10,7 @@ export const UserHeader = ({ userProfile }) => {
         height="50px"
         width="50px"
       />{" "}
-      <span>Posts {userProfile.countPosts}</span>
+      <span>Posts {userProfile.postCounter}</span>
       <h2>
         {userProfile.name} {userProfile.surname}
       </h2>
