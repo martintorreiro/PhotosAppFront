@@ -14,7 +14,7 @@ export const LikesList = ({ post }) => {
   return (
     <ul>
       {likes.map((like) => (
-        <li>
+        <li key={like.id}>
           <img
             src={like.image ? like.image : defaultImage}
             alt="avatar"
