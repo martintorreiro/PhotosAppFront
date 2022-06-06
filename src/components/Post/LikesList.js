@@ -1,5 +1,7 @@
 import { useGetLikesList } from "../../hooks/useGetLikesList";
 import defaultImage from "../../assets/images/defaultAvatar.png";
+import { Link } from "react-router-dom";
+import { UserProfile } from "../../pages/UserProfile";
 export const LikesList = ({ post }) => {
   const { likes, loading, error } = useGetLikesList(post.postId);
   console.log(likes);
@@ -19,7 +21,9 @@ export const LikesList = ({ post }) => {
             height="30px"
           />
           <p>
-            {like.name} {like.surname}
+            <Link to={`/user/${like.name} `} element={<UserProfile />}>
+              {like.name} {like.surname}
+            </Link>
           </p>
         </li>
       ))}

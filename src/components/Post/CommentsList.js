@@ -1,6 +1,8 @@
 import { useGetComments } from "../../hooks/useGetComments";
+import { Link } from "react-router-dom";
 
 import defaultAvatar from "../../assets/images/defaultAvatar.png";
+import { UserProfile } from "../../pages/UserProfile";
 
 export const CommentsList = ({ post }) => {
   const { comments, loading, error } = useGetComments(post.postId);
@@ -20,8 +22,11 @@ export const CommentsList = ({ post }) => {
           <img src={defaultAvatar} alt="avatar" height="30px" />
           <p>
             <span>
-              {comment.userName} {comment.userSurname}
+              <Link to={`/user/${comment.userName}`} element={<UserProfile />}>
+                {comment.userName} {comment.userSurname}
+              </Link>
             </span>
+
             {"  "}
             {comment.comment}
           </p>
