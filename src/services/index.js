@@ -20,3 +20,25 @@ export const getUserProfile = async (userName) => {
 
   return json.data;
 };
+
+export const getPostComments = async (postId) => {
+  const response = await fetch(`/comments/${postId}`);
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error("no se ha podido realizar la peticion al servidor");
+  }
+
+  return json.data;
+};
+
+export const getPostLikes = async (postId) => {
+  const response = await fetch(`/post-likes/${postId}`);
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error("no se ha podido realizar la peticion al servidor");
+  }
+
+  return json.message;
+};
