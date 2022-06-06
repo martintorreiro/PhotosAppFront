@@ -1,15 +1,16 @@
 import { Post } from "../components/Post/Post";
 import { usePosts } from "../hooks/usePosts";
+import {ErrorMessage} from "../components/ErrorMessage";
 
 export const Home = () => {
   const { posts, loading, error } = usePosts();
 
-  if (loading) {
+  if (loading) 
     return <p>loading</p>;
-  }
-  if (error) {
-    return <p>{error}</p>;
-  }
+  
+  if (error) 
+    return <ErrorMessage message={error} />;
+  
 
   return (
     <section>
