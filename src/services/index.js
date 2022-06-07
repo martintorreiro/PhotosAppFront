@@ -46,19 +46,35 @@ export const getPostLikes = async (postId) => {
   return json.message;
 };
 
-
-export const registerUserService = async ({email, password, username}) => {
-  const response = await fetch(`/user`,{
+export const registerUserService = async ({ email, password, userName }) => {
+  const response = await fetch(`/user`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({email, password, username})
-  } ) ;
+    body: JSON.stringify({ email, password, userName }),
+  });
 
   const json = await response.json();
 
-  if(!response.ok) {
+  if (!response.ok) {
     throw new Error(json.message);
   }
+};
+
+export const loginUserService = async ({ email, password, userName }) => {
+  const response = await fetch(`/user/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password, userName }),
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
 };
