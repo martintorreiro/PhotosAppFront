@@ -17,6 +17,7 @@ export const Login = () => {
       const data = await loginUserService({ email, password, userName });
 
       setToken(data);
+      console.log(data);
     } catch (error) {
       setError(error.message);
     }

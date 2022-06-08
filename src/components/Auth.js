@@ -11,9 +11,11 @@ export const Auth = () => {
         <Link to="/register">Register</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Link to="/user/login">Login</Link>
       </li>
-      <li>Token: {token} </li>
+      <li>
+        <Link to="/search">Search</Link>
+      </li>
     </ul>
   );
 };
