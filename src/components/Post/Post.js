@@ -6,6 +6,7 @@ import { useGetCurrentTime } from "../../hooks/useGetCurrentTime";
 import { CommentsList } from "./CommentsList";
 import { useState } from "react";
 import { LikesList } from "./LikesList";
+import { Link } from "react-router-dom";
 
 export const Post = ({ post }) => {
   const datePostTimestamp = new Date(post.dateCreation).getTime();
@@ -18,6 +19,9 @@ export const Post = ({ post }) => {
     <article className="post">
       <header>
         <h3>{post.place}</h3>
+        <h3>
+          <Link to={`/user/${post.userName}`}>{post.userName}</Link>
+        </h3>
         <span>{currentTime}</span>
       </header>
 
@@ -29,7 +33,9 @@ export const Post = ({ post }) => {
 
       <footer>
         <div>
-          <p>{post.title}</p>
+          <p>
+            <Link to={`/post/${post.postId}`}>{post.title}</Link>
+          </p>
           <menu>
             <li
               onClick={() => {
