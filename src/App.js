@@ -8,6 +8,7 @@ import { NotFoundPage } from "./pages/pageNotFound";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { UserProfile } from "./pages/UserProfile";
+import { ShowPost } from "./pages/ShowPost";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/search" element={<Search />} />
         <Route path="/user/:userName" element={<UserProfile />} />
+        <Route path="/post/:postId" element={<ShowPost />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
