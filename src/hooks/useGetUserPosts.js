@@ -9,9 +9,9 @@ export const useGetUserProfile = (userName) => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const lastPosts = await getUserProfile(userName);
-
-        setUserProfile(lastPosts);
+        const userData = await getUserProfile(userName);
+        console.log(userData);
+        setUserProfile(userData);
       } catch (error) {
         setError(error.message);
       } finally {

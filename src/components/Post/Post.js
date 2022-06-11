@@ -1,12 +1,12 @@
 import likeList from "../../assets/images/likeList.png";
-import likeTrue from "../../assets/images/likeTrue.png";
-import likeFalse from "../../assets/images/likeFalse.png";
 import commentsImage from "../../assets/images/comments.png";
 import { useGetCurrentTime } from "../../hooks/useGetCurrentTime";
 import { CommentsList } from "./CommentsList";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LikesList } from "./LikesList";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { ToggleLike } from "./ToggleLike";
 
 export const Post = ({ post }) => {
   const datePostTimestamp = new Date(post.dateCreation).getTime();
@@ -14,7 +14,7 @@ export const Post = ({ post }) => {
   const currentTime = useGetCurrentTime(datePostTimestamp);
   const [showComments, setShowComments] = useState(false);
   const [showLikes, setShowLikes] = useState(false);
-
+  const { user } = useContext(AuthContext);
   return (
     <article className="post">
       <header>
@@ -33,6 +33,7 @@ export const Post = ({ post }) => {
 
       <footer>
         <div>
+          {user ? <ToggleLike /> : <></>}
           <p>
             <Link to={`/post/${post.postId}`}>{post.title}</Link>
           </p>

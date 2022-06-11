@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { loginUserService } from "../services";
 
@@ -7,7 +8,8 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   const [error, setError] = useState("");
-  const { setToken } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -16,8 +18,7 @@ export const Login = () => {
     try {
       const data = await loginUserService({ email, password, userName });
 
-      setToken(data);
-      console.log(data);
+      login(data.token);
     } catch (error) {
       setError(error.message);
     }

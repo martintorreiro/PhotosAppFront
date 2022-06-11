@@ -5,9 +5,9 @@ import { useGetPosts } from "../hooks/useGetPost";
 
 export const ShowPost = () => {
   const { postId } = useParams();
-  console.log(postId);
+
   const { post, loading, error } = useGetPosts(postId);
-  console.log("--l--", post);
+
   if (loading) return <p>loading</p>;
 
   if (error) return <ErrorMessage message={error} />;

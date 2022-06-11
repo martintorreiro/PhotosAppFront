@@ -3,18 +3,20 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 export const Auth = () => {
-  const { token } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
-  return (
+  return user ? (
+    <section>
+      Logged in as <Link to={`/user/${user.id}`}>{user.email}</Link>{" "}
+      <button onClick={() => logout()}>Logout</button>
+    </section>
+  ) : (
     <ul>
       <li>
-        <Link to="/register">Register</Link>
+        <Link to={"/register"}>Register</Link>
       </li>
       <li>
-        <Link to="/user/login">Login</Link>
-      </li>
-      <li>
-        <Link to="/search">Search</Link>
+        <Link to={"/user/login"}>Login</Link>
       </li>
     </ul>
   );

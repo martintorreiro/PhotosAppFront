@@ -1,7 +1,6 @@
 import defaultAvatar from "../assets/images/defaultAvatar.png";
 
 export const UserHeader = ({ userProfile }) => {
-  console.log(userProfile);
   return (
     <header>
       <img
