@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import defaultAvatar from "../../assets/images/defaultAvatar.png";
 import { UserProfile } from "../../pages/UserProfile";
+import { NewComment } from "./NewComment";
 
 export const CommentsList = ({ post }) => {
   const { comments, loading, error } = useGetComments(post.postId);
@@ -32,6 +33,7 @@ export const CommentsList = ({ post }) => {
           </p>
         </li>
       ))}
+      <NewComment post={post} />
     </ul>
   );
 };

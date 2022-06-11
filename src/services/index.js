@@ -101,3 +101,21 @@ export const loginUserService = async ({ email, password, userName }) => {
   }
   return json.data;
 };
+
+export const sendCommentService = async (data, post_id, token) => {
+  const response = await fetch(`/comment/?post_id=${post_id}`, {
+    method: "POST",
+    body: data,
+    headers: {
+      Authorization: token,
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json.data;
+};

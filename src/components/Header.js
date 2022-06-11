@@ -5,7 +5,9 @@ export const Header = () => {
   return (
     <header className="mainHeader">
       <h1>
-        <Link to="/">Photos App </Link>
+        <Link to="/" className="appTitle">
+          Photos App{" "}
+        </Link>
       </h1>
 
       <nav>
