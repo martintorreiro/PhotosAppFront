@@ -27,8 +27,8 @@ export const Login = () => {
 
   return (
     <section>
-      <h1>Login</h1>
       <form onSubmit={handleForm}>
+        <h1>Login</h1>
         <fieldset>
           <label htmlFor="email">Email</label>
           <input

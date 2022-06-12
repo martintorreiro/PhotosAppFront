@@ -6,7 +6,7 @@ import { Register } from "./pages/Register";
 import { Search } from "./pages/Search";
 import { NotFoundPage } from "./pages/pageNotFound";
 import { Header } from "./components/Header";
-/* import { Footer } from "./components/Footer"; */
+// import { Footer } from "./components/Footer";
 import { UserProfile } from "./pages/UserProfile";
 import { ShowPost } from "./pages/ShowPost";
 import { EditProfile } from "./pages/EditProfile";
@@ -16,6 +16,7 @@ function App() {
   return (
     <main className="container">
       <Header />
+      <NavigationMenu />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/user/login" element={<Login />} />
@@ -26,7 +27,6 @@ function App() {
         <Route path="/edit" element={<EditProfile />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <NavigationMenu />
     </main>
   );
 }

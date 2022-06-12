@@ -10,7 +10,7 @@ export const Header = () => {
         <img
           src={photoAppLogo}
           alt="logo"
-          height="30px"
+          height="50px"
           className="headerImage"
         />
         <Link to="/">Photos App </Link>

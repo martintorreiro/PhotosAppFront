@@ -7,9 +7,7 @@ export const Auth = () => {
 
   return user ? (
     <section>
-
       <Link to={`/user/${user.id}`}>{user.userName}</Link>{" "}
-
       <button onClick={() => logout()}>Logout</button>
     </section>
   ) : (
@@ -20,7 +18,7 @@ export const Auth = () => {
       <li>
         <Link to={"/user/login"}>Login</Link>
       </li>
-      <li>
+      {/* <li>
         {user ? (
           <p>
             <Link to={`/user/${user.userName}`}>MyProfile</Link>
@@ -28,7 +26,7 @@ export const Auth = () => {
         ) : (
           <Link to={`/user/login`}>MyProfile</Link>
         )}
-      </li>
+      </li> */}
     </ul>
   );
 };

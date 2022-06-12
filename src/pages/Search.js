@@ -24,10 +24,10 @@ export const Search = () => {
 
   return (
     <section>
-      <h1>
-        Select type of search <p>Seleccione el tipo de búsqueda</p>
-      </h1>
       <form>
+        <h1>
+          Select type of search <p>Seleccione el tipo de búsqueda</p>
+        </h1>
         <fieldset>
           <label>
             By user / Por usuario

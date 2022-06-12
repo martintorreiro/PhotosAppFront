@@ -31,8 +31,8 @@ export const Register = () => {
 
   return (
     <section>
-      <h1>Register</h1>
       <form onSubmit={handleForm}>
+        <h1>Register</h1>
         <fieldset>
           <label htmlFor="email">Email</label>
           <input
