@@ -18,13 +18,13 @@ export const Header = () => {
         <Link to="/">Photos App </Link>
       </h1>
 
-      {user ? (
+      {/* {user ? (
         <p>
           <Link to={`/user/${user.userName}`}>MyProfile</Link>
         </p>
       ) : (
         <Link to={`/user/login`}>MyProfile</Link>
-      )}
+      )} */}
 
       <nav>
         <p>
