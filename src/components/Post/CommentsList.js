@@ -33,6 +33,7 @@ export const CommentsList = ({ post }) => {
           </p>
         </li>
       ))}
+
       <NewComment post={post} />
     </ul>
   );

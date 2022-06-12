@@ -9,6 +9,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { UserProfile } from "./pages/UserProfile";
 import { ShowPost } from "./pages/ShowPost";
+import { EditProfile } from "./pages/EditProfile";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/user/:userName" element={<UserProfile />} />
         <Route path="/post/:postId" element={<ShowPost />} />
+        <Route path="/edit" element={<EditProfile />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
