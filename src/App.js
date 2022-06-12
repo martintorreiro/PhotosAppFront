@@ -13,7 +13,7 @@ import { EditProfile } from "./pages/EditProfile";
 
 function App() {
   return (
-    <div className="container">
+    <main className="container">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
-    </div>
+    </main>
   );
 }
 

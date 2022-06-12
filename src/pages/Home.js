@@ -9,7 +9,6 @@ export const Home = () => {
   const { user } = useContext(AuthContext);
 
   if (loading) return <p>loading</p>;
-
   if (error) return <ErrorMessage message={error} />;
 
   return (

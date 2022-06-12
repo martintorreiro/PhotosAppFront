@@ -23,13 +23,14 @@ export const Search = () => {
   };
 
   return (
-    <div>
+    <section>
+      <h1>
+        Select type of search <p>Seleccione el tipo de búsqueda</p>
+      </h1>
       <form>
         <fieldset>
-          <legend>Seleccione el tipo de busqueda</legend>
-
           <label>
-            user
+            By user / Por usuario
             <input
               type="radio"
               name="search"
@@ -39,7 +40,7 @@ export const Search = () => {
             />
           </label>
           <label>
-            title
+            By title / Por título
             <input
               type="radio"
               name="search"
@@ -49,7 +50,7 @@ export const Search = () => {
             />
           </label>
           <label>
-            place
+            By place / Por lugar
             <input
               type="radio"
               name="search"
@@ -63,14 +64,17 @@ export const Search = () => {
 
       <form onSubmit={handlerSubmit}>
         <fieldset>
-          <input
-            type="text"
-            name="search_user"
-            id="search_user"
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <button>Search</button>
+          <label>
+            Type your text / Escribe el texto
+            <input
+              type="text"
+              name="search_user"
+              id="search_user"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </label>
         </fieldset>
+        <button>Search / Buscar</button>
       </form>
 
       {result ? (
@@ -89,6 +93,6 @@ export const Search = () => {
       ) : (
         <></>
       )}
-    </div>
+    </section>
   );
 };

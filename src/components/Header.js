@@ -9,21 +9,26 @@ export const Header = () => {
   return (
     <header className="mainHeader">
       <h1 className="appTitle">
-        <img src={photoAppLogo} alt="logo" height="30px" />
+        <img
+          src={photoAppLogo}
+          alt="logo"
+          height="30px"
+          className="headerImage"
+        />
         <Link to="/">Photos App </Link>
       </h1>
 
       {user ? (
         <p>
-          <Link to={`/user/${user.userName}`}>myProfile</Link>
+          <Link to={`/user/${user.userName}`}>MyProfile</Link>
         </p>
       ) : (
-        <Link to={`/user/login`}>myProfile</Link>
+        <Link to={`/user/login`}>MyProfile</Link>
       )}
 
       <nav>
         <p>
-          <Link to="/search">search</Link>
+          <Link to="/search">Search</Link>
         </p>
         <Auth />
       </nav>

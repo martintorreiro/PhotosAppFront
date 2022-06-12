@@ -19,20 +19,20 @@ export const Post = ({ post }) => {
     <article className="post">
       <header>
         <h3>
-          Title: <span>{post.title}</span>
+          Title / Título: <span>{post.title}</span>
         </h3>
 
         <h3>
-          Place: <span>{post.place}</span>
+          Place / Lugar: <span>{post.place}</span>
         </h3>
         <h3>
-          Posted by:{" "}
+          Posted by / Post por:{" "}
           <span>
             <Link to={`/user/${post.userName}`}>{post.userName}</Link>
           </span>
         </h3>
         <h3>
-          On: <span>{currentTime}</span>
+          On / El: <span>{currentTime}</span>
         </h3>
       </header>
 
@@ -47,7 +47,7 @@ export const Post = ({ post }) => {
           {user ? <ToggleLike /> : <></>}
           <h3>
             <Link to={`/post/${post.postId}`}>
-              Access the post: <span>{post.title}</span>
+              Access the post / Accede al post: <span>{post.title}</span>
             </Link>
           </h3>
           <menu>

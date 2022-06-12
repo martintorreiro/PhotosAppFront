@@ -5,10 +5,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 a {
   all: unset;
+}
+
+h1 {
+  margin-bottom: 10px;
 }
 
 .container {
@@ -16,6 +21,41 @@ a {
   gap: 1rem;
   display: grid;
   grid-template-rows: 15vh 77vh 8vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  color: black;
+}
+
+main.container > section {
+  width: 100%;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+main.container > section.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main.container section.user-data {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+main.container > section.error p {
+  margin-bottom: 1rem;
+}
+
+main.container > section h1 {
+  margin-bottom: 1rem;
+}
+
+.container > footer {
+  padding: 2rem;
+  justify-content: center;
 }
 
 .mainHeader {
@@ -97,4 +137,28 @@ h3 {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: black;
+}
+
+form {
+  margin: 20px;
+}
+
+form fieldset {
+  border: none;
+  margin-bottom: 1rem;
+}
+
+form input {
+  border: none;
+  background-color: lightgrey;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  font-weight: bold;
+  border: none;
 }
