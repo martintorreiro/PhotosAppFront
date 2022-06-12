@@ -38,7 +38,14 @@ export const Post = ({ post }) => {
 
       <main>
         {post.image.map((img) => {
-          return <img src={img.path} alt="post" key={img.id} />;
+          return (
+            <img
+              src={img.path}
+              alt="post"
+              key={img.id}
+              className="postImages"
+            />
+          );
         })}
       </main>
 
@@ -73,6 +80,7 @@ export const Post = ({ post }) => {
         </div>
         {showComments ? <CommentsList post={post} /> : <></>}
         {showLikes ? <LikesList post={post} /> : <></>}
+        <hr />
       </footer>
     </article>
   );

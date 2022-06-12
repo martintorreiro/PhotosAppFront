@@ -2,7 +2,6 @@ import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 import { useState } from "react";
 import { sendCommentService } from "../../services";
-import defaultAvatar from "../../assets/images/defaultAvatar.png";
 
 export const NewComment = ({ addComment, post }) => {
   const { token } = useContext(AuthContext);
@@ -28,13 +27,12 @@ export const NewComment = ({ addComment, post }) => {
     <>
       <form onSubmit={handleForm}>
         <fieldset>
-          <img src={defaultAvatar} alt="avatar" height="30px" />
-          <label htmlFor="comment">Add a comment</label>
+          <label htmlFor="comment">Add a comment / Añade un comentario</label>
           <input type="text" name="comment" id="comment" required />
         </fieldset>
-        <button>Comment</button>
+        <button>Comment / Comentario</button>
         {error ? <p>{error}</p> : null}
-        {loading ? <p>Adding comment...</p> : null}
+        {loading ? <p>Adding comment... / Añadiendo comentario...</p> : null}
       </form>
     </>
   );
