@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import defaultAvatar from "../assets/images/defaultAvatar.png";
+import { AuthContext } from "../context/AuthContext";
 
 export const UserHeader = ({ userProfile }) => {
+  const { user } = useContext(AuthContext);
+  console.log("-<", userProfile);
   return (
     <header>
       <img
@@ -8,12 +13,22 @@ export const UserHeader = ({ userProfile }) => {
         alt="avatar"
         height="50px"
         width="50px"
-      />{" "}
-      <span>Posts {userProfile.postCounter}</span>
-      <h2>
-        {userProfile.name} {userProfile.surname}
-      </h2>
+      />
+      <span>
+        <h2>{userProfile.userName}</h2>
+        <h3>
+          {userProfile.name} {userProfile.surname}
+        </h3>
+      </span>
+      <h3>Posts {userProfile.postCounter}</h3>
       <h3>{userProfile.intro}</h3>
+      {user.id === userProfile.id ? (
+        <p>
+          <Link to="/edit">edit profil</Link>
+        </p>
+      ) : (
+        <></>
+      )}
     </header>
   );
 };

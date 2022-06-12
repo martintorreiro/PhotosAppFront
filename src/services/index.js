@@ -101,3 +101,20 @@ export const loginUserService = async ({ email, password, userName }) => {
   }
   return json.data;
 };
+
+export const editProfileService = async (token, userName, data) => {
+  const response = await fetch(`/user/modify/${userName}/`, {
+    method: "PUT",
+    body: data,
+    headers: {
+      Authorization: token,
+    },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.message;
+};

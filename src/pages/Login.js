@@ -19,6 +19,7 @@ export const Login = () => {
       const data = await loginUserService({ email, password, userName });
 
       login(data.token);
+      navigate("/");
     } catch (error) {
       setError(error.message);
     }

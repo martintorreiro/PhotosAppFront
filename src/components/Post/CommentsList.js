@@ -32,6 +32,7 @@ export const CommentsList = ({ post }) => {
           </p>
         </li>
       ))}
+      <li>input</li>
     </ul>
   );
 };
