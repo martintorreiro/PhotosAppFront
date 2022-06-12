@@ -18,11 +18,22 @@ export const Post = ({ post }) => {
   return (
     <article className="post">
       <header>
-        <h3>{post.place}</h3>
         <h3>
-          <Link to={`/user/${post.userName}`}>{post.userName}</Link>
+          Title: <span>{post.title}</span>
         </h3>
-        <span>{currentTime}</span>
+
+        <h3>
+          Place: <span>{post.place}</span>
+        </h3>
+        <h3>
+          Posted by:{" "}
+          <span>
+            <Link to={`/user/${post.userName}`}>{post.userName}</Link>
+          </span>
+        </h3>
+        <h3>
+          On: <span>{currentTime}</span>
+        </h3>
       </header>
 
       <main>
@@ -34,9 +45,11 @@ export const Post = ({ post }) => {
       <footer>
         <div>
           {user ? <ToggleLike /> : <></>}
-          <p>
-            <Link to={`/post/${post.postId}`}>{post.title}</Link>
-          </p>
+          <h3>
+            <Link to={`/post/${post.postId}`}>
+              Access the post: <span>{post.title}</span>
+            </Link>
+          </h3>
           <menu>
             <li
               onClick={() => {
