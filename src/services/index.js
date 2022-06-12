@@ -119,7 +119,6 @@ export const editProfileService = async (token, userName, data) => {
   return json.message;
 };
 
-
 export const sendCommentService = async (data, post_id, token) => {
   const response = await fetch(`/comment/?post_id=${post_id}`, {
     method: "POST",
@@ -136,7 +135,5 @@ export const sendCommentService = async (data, post_id, token) => {
     throw new Error(json.message);
   }
 
-
   return json.data;
-
 };

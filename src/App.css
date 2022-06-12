@@ -8,6 +8,11 @@
   list-style: none;
 }
 
+body {
+  min-height: 100vh;
+  width: 100vw;
+}
+
 a {
   all: unset;
 }
@@ -17,10 +22,8 @@ h1 {
 }
 
 .container {
-  min-height: 100vh;
-  gap: 1rem;
   display: grid;
-  grid-template-rows: 15vh 77vh 8vh;
+  grid-template-rows: 15vh 75vh 10vh;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   color: black;
@@ -28,9 +31,6 @@ h1 {
 
 main.container > section {
   width: 100%;
-  padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 main.container > section.error {
@@ -161,4 +161,21 @@ button {
   color: white;
   font-weight: bold;
   border: none;
+}
+
+/* -------navigation menu----- */
+
+.navigation {
+  position: absolute;
+  width: 100%;
+
+  bottom: 0;
+  left: 0;
+}
+
+.navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }

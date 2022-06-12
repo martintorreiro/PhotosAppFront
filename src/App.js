@@ -6,10 +6,11 @@ import { Register } from "./pages/Register";
 import { Search } from "./pages/Search";
 import { NotFoundPage } from "./pages/pageNotFound";
 import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+/* import { Footer } from "./components/Footer"; */
 import { UserProfile } from "./pages/UserProfile";
 import { ShowPost } from "./pages/ShowPost";
 import { EditProfile } from "./pages/EditProfile";
+import { NavigationMenu } from "./components/NavigationMenu";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/edit" element={<EditProfile />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Footer />
+      <NavigationMenu />
     </main>
   );
 }
