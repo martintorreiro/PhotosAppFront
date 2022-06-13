@@ -38,13 +38,12 @@ export const Post = ({ post }) => {
 
       <main>
         {post.image.map((img) => {
+          const imgUrl = img.path.startsWith("http")
+            ? img.path
+            : `/${process.env.REACT_APP_POST_PATH}/${img.path}`;
+
           return (
-            <img
-              src={`${process.env.REACT_APP_BACKEND}/${process.env.REACT_APP_POST_PATH}/${img.path}`}
-              alt="post"
-              key={img.id}
-              className="postImages"
-            />
+            <img src={imgUrl} alt="post" key={img.id} className="postImages" />
           );
         })}
       </main>

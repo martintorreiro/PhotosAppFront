@@ -20,11 +20,19 @@ export const CommentsList = ({ post }) => {
     <ul>
       {comments.map((comment) => (
         <li key={comment.id} className="comment">
-          <img src={defaultAvatar} alt="avatar" height="30px" />
+          <img
+            src={
+              comment.avatar
+                ? `${process.env.REACT_APP_AVATAR_PATH}/${comment.avatar}`
+                : defaultAvatar
+            }
+            alt="avatar"
+            height="30px"
+          />
           <p>
             <span>
               <Link to={`/user/${comment.userName}`} element={<UserProfile />}>
-                {comment.userName} {comment.userSurname}
+                {comment.userName}
               </Link>
             </span>
 

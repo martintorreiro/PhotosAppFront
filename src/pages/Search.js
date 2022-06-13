@@ -80,13 +80,17 @@ export const Search = () => {
       {result ? (
         <section>
           <img
-            src={result.image ? result.image : defaultImage}
+            src={
+              result.image
+                ? `${process.env.REACT_APP_AVATAR_PATH}/${result.image}`
+                : defaultImage
+            }
             alt="avatar"
             height="30px"
           />
           <p>
-            <Link to={`/user/${result.name} `} element={<UserProfile />}>
-              {result.name} {result.surname}
+            <Link to={`/user/${result.userName} `} element={<UserProfile />}>
+              {result.userName}
             </Link>
           </p>
         </section>
