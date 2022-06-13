@@ -9,7 +9,11 @@ export const UserHeader = ({ userProfile }) => {
   return (
     <header>
       <img
-        src={userProfile.image ? userProfile.image : defaultAvatar}
+        src={
+          userProfile.image
+            ? `${process.env.REACT_APP_AVATAR_PATH}/${userProfile.image}`
+            : defaultAvatar
+        }
         alt="avatar"
         height="50px"
         width="50px"
