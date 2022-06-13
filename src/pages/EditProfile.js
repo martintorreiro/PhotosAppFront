@@ -3,8 +3,8 @@ import { AuthContext } from "../context/AuthContext";
 import { editProfileService } from "../services";
 
 export const EditProfile = () => {
-  const [error, serError] = useState("");
-  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [sending, setSending] = useState(true);
 
   const { token, user } = useContext(AuthContext);
 
@@ -15,7 +15,11 @@ export const EditProfile = () => {
 
       const response = await editProfileService(token, user.userName, data);
       console.log(response);
-    } catch (error) {}
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setSending(false);
+    }
   };
   return (
     <section>

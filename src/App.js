@@ -11,6 +11,7 @@ import { UserProfile } from "./pages/UserProfile";
 import { ShowPost } from "./pages/ShowPost";
 import { EditProfile } from "./pages/EditProfile";
 import { NavigationMenu } from "./components/NavigationMenu";
+import { NewPost } from "./pages/NewPost";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/user/:userName" element={<UserProfile />} />
         <Route path="/post/:postId" element={<ShowPost />} />
+        <Route path="/posting" element={<NewPost />} />
         <Route path="/edit" element={<EditProfile />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

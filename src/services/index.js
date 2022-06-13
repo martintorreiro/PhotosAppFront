@@ -43,7 +43,7 @@ export const getPost = async (postId) => {
   if (!response.ok) {
     throw new Error("no se ha podido realizar la peticion al servidor");
   }
-
+  console.log("comprobando los datos del get post", json);
   return json.data;
 };
 
@@ -136,4 +136,24 @@ export const sendCommentService = async (data, post_id, token) => {
   }
 
   return json.data;
+};
+
+export const createPost = async (data, token) => {
+  console.log("por qui", token);
+  const response = await fetch(`/post`, {
+    method: "POST",
+
+    body: data,
+    headers: {
+      Authorization: token,
+    },
+  });
+
+  const json = await response.json();
+  console.log("---->", json);
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json;
 };
