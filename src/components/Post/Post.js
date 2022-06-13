@@ -10,7 +10,7 @@ import { ToggleLike } from "./ToggleLike";
 
 export const Post = ({ post }) => {
   const datePostTimestamp = new Date(post.dateCreation).getTime();
-
+  console.log("array de imagenes", post.image);
   const currentTime = useGetCurrentTime(datePostTimestamp);
   const [showComments, setShowComments] = useState(false);
   const [showLikes, setShowLikes] = useState(false);
@@ -40,7 +40,7 @@ export const Post = ({ post }) => {
         {post.image.map((img) => {
           return (
             <img
-              src={img.path}
+              src={`${process.env.REACT_APP_BACKEND}/${process.env.REACT_APP_POST_PATH}/${img.path}`}
               alt="post"
               key={img.id}
               className="postImages"
