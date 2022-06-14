@@ -10,7 +10,7 @@ export const useGetUserProfile = (userName) => {
     const getUser = async () => {
       try {
         const userData = await getUserProfile(userName);
-        console.log(userData);
+
         setUserProfile(userData);
       } catch (error) {
         setError(error.message);

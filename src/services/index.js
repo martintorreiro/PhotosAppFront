@@ -139,7 +139,6 @@ export const sendCommentService = async (data, post_id, token) => {
 };
 
 export const createPost = async (data, token) => {
-  console.log("por qui", token);
   const response = await fetch(`/post`, {
     method: "POST",
 
@@ -150,7 +149,20 @@ export const createPost = async (data, token) => {
   });
 
   const json = await response.json();
-  console.log("---->", json);
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+
+  return json;
+};
+
+export const toggleLike = async (postId, token) => {
+  const response = await fetch(`/likes/${postId}`, {
+    headers: { Authorization: token },
+  });
+  const json = await response.json();
+
   if (!response.ok) {
     throw new Error(json.message);
   }
