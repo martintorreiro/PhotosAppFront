@@ -26,9 +26,9 @@ export const UserHeader = ({ userProfile }) => {
       </span>
       <h3>Posts {userProfile.postCounter}</h3>
       <h3>{userProfile.intro}</h3>
-      {user.id === userProfile.id ? (
+      {user && user.id === userProfile.id ? (
         <p>
-          <Link to="/edit">edit profil</Link>
+          <Link to="/edit">edit profile</Link>
         </p>
       ) : (
         <></>

@@ -10,11 +10,11 @@ import { ToggleLike } from "./ToggleLike";
 
 export const Post = ({ post }) => {
   const datePostTimestamp = new Date(post.dateCreation).getTime();
-  console.log("array de imagenes", post.image);
+
   const currentTime = useGetCurrentTime(datePostTimestamp);
   const [showComments, setShowComments] = useState(false);
   const [showLikes, setShowLikes] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, token } = useContext(AuthContext);
   return (
     <article className="post">
       <header>
@@ -37,20 +37,24 @@ export const Post = ({ post }) => {
       </header>
 
       <main>
-        {post.image.map((img) => {
-          const imgUrl = img.path.startsWith("http")
-            ? img.path
-            : `/${process.env.REACT_APP_POST_PATH}/${img.path}`;
+        <ul className="slider">
+          {post.image.map((img) => {
+            const imgUrl = img.path.startsWith("http")
+              ? img.path
+              : `/${process.env.REACT_APP_POST_PATH}/${img.path}`;
 
-          return (
-            <img src={imgUrl} alt="post" key={img.id} className="postImages" />
-          );
-        })}
+            return (
+              <li key={img.id}>
+                <img src={imgUrl} alt="post" className="postImages" />
+              </li>
+            );
+          })}
+        </ul>
       </main>
 
       <footer>
         <div>
-          {user ? <ToggleLike /> : <></>}
+          {user ? <ToggleLike postId={post.postId} token={token} /> : <></>}
           <h3>
             <Link to={`/post/${post.postId}`}>
               Access the post / Accede al post: <span>{post.title}</span>
