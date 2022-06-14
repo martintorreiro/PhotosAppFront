@@ -23,7 +23,7 @@ export const CommentsList = ({ post }) => {
           <img
             src={
               comment.avatar
-                ? `${process.env.REACT_APP_AVATAR_PATH}/${comment.avatar}`
+                ? `/${process.env.REACT_APP_AVATAR_PATH}/${comment.avatar}`
                 : defaultAvatar
             }
             alt="avatar"

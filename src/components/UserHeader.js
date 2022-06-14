@@ -11,7 +11,7 @@ export const UserHeader = ({ userProfile }) => {
       <img
         src={
           userProfile.image
-            ? `${process.env.REACT_APP_AVATAR_PATH}/${userProfile.image}`
+            ? `/${process.env.REACT_APP_AVATAR_PATH}/${userProfile.image}`
             : defaultAvatar
         }
         alt="avatar"
