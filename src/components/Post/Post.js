@@ -15,6 +15,7 @@ export const Post = ({ post }) => {
   const [showComments, setShowComments] = useState(false);
   const [showLikes, setShowLikes] = useState(false);
   const { user, token } = useContext(AuthContext);
+
   return (
     <article className="post">
       <header>
@@ -54,7 +55,7 @@ export const Post = ({ post }) => {
 
       <footer>
         <div>
-          {user ? <ToggleLike postId={post.postId} token={token} /> : <></>}
+          {user ? <ToggleLike post={post} user={user} token={token} /> : <></>}
           <h3>
             <Link to={`/post/${post.postId}`}>
               Access the post / Accede al post: <span>{post.title}</span>
