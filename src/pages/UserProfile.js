@@ -9,7 +9,7 @@ export const UserProfile = () => {
   const { userProfile, loading, error } = useGetUserProfile(userName);
 
   if (loading) {
-    return <h2>loading...</h2>;
+    return <h2>Loading... / Cargando</h2>;
   }
   if (error) {
     return <h2>{error}</h2>;

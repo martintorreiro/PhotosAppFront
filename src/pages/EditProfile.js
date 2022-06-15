@@ -23,34 +23,34 @@ export const EditProfile = () => {
   };
   return (
     <section>
-      <h1>Edit user profile</h1>
       <form onSubmit={handlerSubmit}>
+        <h1>Edit user profile / Edita el perfil de usuario</h1>
         <fieldset>
-          <label htmlFor="name">name</label>
+          <label htmlFor="name">Name / Nombre</label>
           <input type="text" id="name" name="name" />
         </fieldset>
         <fieldset>
-          <label htmlFor="surname">surname</label>
+          <label htmlFor="surname">Surname / Apellido</label>
           <input type="text" id="surname" name="surname" />
         </fieldset>
         <fieldset>
-          <label htmlFor="intro">Intro</label>
+          <label htmlFor="intro">Intro / Intro</label>
           <input type="text" id="intro" name="intro" />
         </fieldset>
         <fieldset>
-          <label htmlFor="newUserName">user name</label>
+          <label htmlFor="newUserName">User name / Nombre usuario</label>
           <input type="text" id="newUserName" name="newUserName" />
         </fieldset>
         <fieldset>
-          <label htmlFor="image">Image avatar</label>
+          <label htmlFor="image">Avatar image / Imagen de avatar</label>
           <input type="file" id="image" name="image" accept="image/*" />
         </fieldset>
         <fieldset>
-          <label htmlFor="email">email</label>
+          <label htmlFor="email">Email / Correo electrónico</label>
           <input type="email" id="email" name="email" />
         </fieldset>
-        <button>Edit</button>
-        {sending ? <p>Set sending...</p> : <></>}
+        <button>Update / Actualizar</button>
+        {sending ? <p></p> : <></>}
         {error ? <p>{error}</p> : <></>}
       </form>
     </section>

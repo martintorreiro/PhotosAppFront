@@ -30,7 +30,10 @@ h1 {
 }
 
 main.container > section {
-  width: 100vw;
+  width: 100%;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 main.container > section.error {
@@ -38,15 +41,16 @@ main.container > section.error {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  gap: 2rem;
+  text-align: center;
+  color: rgb(255, 0, 0);
 }
 
 main.container section.user-data {
   padding: 1rem;
   margin-bottom: 2rem;
-}
-
-main.container > section.error p {
-  margin-bottom: 1rem;
 }
 
 main.container > section h1 {

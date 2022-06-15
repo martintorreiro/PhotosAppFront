@@ -8,7 +8,7 @@ export const ShowPost = () => {
 
   const { post, loading, error } = useGetPosts(postId);
 
-  if (loading) return <p>loading</p>;
+  if (loading) return <p>Loading / Cargando</p>;
 
   if (error) return <ErrorMessage message={error} />;
   return <Post post={post} />;
