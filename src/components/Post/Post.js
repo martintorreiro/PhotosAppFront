@@ -19,6 +19,7 @@ export const Post = ({ post }) => {
   return (
     <article className="post">
       <header>
+        <hr />
         <h3>
           Title / Título: <span>{post.title}</span>
         </h3>
@@ -84,7 +85,6 @@ export const Post = ({ post }) => {
         </div>
         {showComments ? <CommentsList post={post} /> : <></>}
         {showLikes ? <LikesList post={post} /> : <></>}
-        <hr />
       </footer>
     </article>
   );

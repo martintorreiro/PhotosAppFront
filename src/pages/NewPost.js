@@ -28,18 +28,18 @@ export const NewPost = () => {
 
   return (
     <section>
-      <h1>New post</h1>
       <form onSubmit={handleForm}>
+        <h1>New post / Nuevo post</h1>
         <fieldset>
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">Title / Título</label>
           <input type="text" id="title" name="title" required />
         </fieldset>
         <fieldset>
-          <label htmlFor="place">Place</label>
+          <label htmlFor="place">Place / Lugar</label>
           <input type="text" id="place" name="place" required />
         </fieldset>
         <fieldset>
-          <label htmlFor="image">Select images</label>
+          <label htmlFor="image">Select images / Selecciona imágenes</label>
           <input
             type="file"
             id="image"
@@ -49,8 +49,8 @@ export const NewPost = () => {
             accept="image/*"
           />
         </fieldset>
-        <button>Create</button>
-        {sending ? <p>Set sending...</p> : <></>}
+        <button>Create / Crea</button>
+        {sending ? <p>Sending... / Enviando</p> : <></>}
         {error ? <p>{error}</p> : <></>}
       </form>
     </section>
