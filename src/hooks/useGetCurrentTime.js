@@ -11,15 +11,19 @@ export const useGetCurrentTime = (ms) => {
     const currentDays = Math.floor(currentHours / 24);
     const currentWeeks = Math.floor(currentDays / 7);
     if (currentWeeks) {
-      setCurrentTime(`${currentWeeks} weeks`);
+      setCurrentTime(`${currentWeeks} week${currentWeeks > 1 ? "s" : ""} ago`);
     } else if (currentDays) {
-      setCurrentTime(`${currentDays} d`);
+      setCurrentTime(`${currentDays} day${currentDays > 1 ? "s" : ""} ago`);
     } else if (currentHours) {
-      setCurrentTime(`${currentHours} h`);
+      setCurrentTime(`${currentHours} hour${currentHours > 1 ? "s" : ""} ago`);
     } else if (currentMinuts) {
-      setCurrentTime(`${currentMinuts} m`);
+      setCurrentTime(
+        `${currentMinuts} minut${currentMinuts > 1 ? "s" : ""} ago`
+      );
     } else {
-      setCurrentTime(`${currentSeconds} s`);
+      setCurrentTime(
+        `${currentSeconds} second${currentSeconds > 1 ? "s" : ""} ago`
+      );
     }
   }, [ms]);
 
