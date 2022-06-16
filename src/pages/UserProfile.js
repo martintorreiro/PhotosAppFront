@@ -16,7 +16,7 @@ export const UserProfile = () => {
   }
 
   return (
-    <section>
+    <section className="user_profile">
       <UserHeader userProfile={userProfile} />
       <UserBody posts={userProfile.posts} />
     </section>

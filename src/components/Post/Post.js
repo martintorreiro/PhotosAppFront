@@ -7,6 +7,7 @@ import { LikesList } from "./LikesList";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { ToggleLike } from "./ToggleLike";
+import defaultAvatar from "../../assets/images/defaultAvatar.png";
 
 export const Post = ({ post }) => {
   const datePostTimestamp = new Date(post.dateCreation).getTime();
@@ -15,26 +16,34 @@ export const Post = ({ post }) => {
   const [showComments, setShowComments] = useState(false);
   const [showLikes, setShowLikes] = useState(false);
   const { user, token } = useContext(AuthContext);
-
+  console.log("-.-.", post);
   return (
     <article className="post">
       <header>
         <hr />
-        <h3>
-          Title / Título: <span>{post.title}</span>
-        </h3>
+        <div>
+          <div>
+            <img
+              src={
+                post.userAvatar
+                  ? `/${process.env.REACT_APP_AVATAR_PATH}/${post.userAvatar}`
+                  : defaultAvatar
+              }
+              alt="avatar"
+              height="25px"
+              width="25px"
+              style={{ borderRadius: "50%" }}
+            />
+
+            <span>
+              <Link to={`/user/${post.userName}`}>{post.userName}</Link>
+            </span>
+          </div>
+          <p>{currentTime}</p>
+        </div>
 
         <h3>
-          Place / Lugar: <span>{post.place}</span>
-        </h3>
-        <h3>
-          Posted by / Post por:{" "}
-          <span>
-            <Link to={`/user/${post.userName}`}>{post.userName}</Link>
-          </span>
-        </h3>
-        <h3>
-          On / El: <span>{currentTime}</span>
+          Place: <span>{post.place}</span>
         </h3>
       </header>
 
@@ -54,14 +63,10 @@ export const Post = ({ post }) => {
         </ul>
       </main>
 
-      <footer>
-        <div>
+      <footer className="post_footer">
+        <div className="post_footer_menu">
           {user ? <ToggleLike post={post} user={user} token={token} /> : <></>}
-          <h3>
-            <Link to={`/post/${post.postId}`}>
-              Access the post / Accede al post: <span>{post.title}</span>
-            </Link>
-          </h3>
+
           <menu>
             <li
               onClick={() => {
@@ -69,7 +74,7 @@ export const Post = ({ post }) => {
                 setShowLikes(!showLikes);
               }}
             >
-              <p>{post.likesCount}</p>
+              <span>{post.likes[0].id ? post.likes.length : "0"}</span>
               <img src={likeList} alt="likes list" height="20px" />
             </li>
 
@@ -83,6 +88,15 @@ export const Post = ({ post }) => {
             </li>
           </menu>
         </div>
+        <div>
+          <h3>
+            Title:
+            <span>
+              <Link to={`/post/${post.postId}`}>{post.title} </Link>
+            </span>
+          </h3>
+        </div>
+
         {showComments ? <CommentsList post={post} /> : <></>}
         {showLikes ? <LikesList post={post} /> : <></>}
       </footer>

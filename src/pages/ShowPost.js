@@ -7,7 +7,7 @@ export const ShowPost = () => {
   const { postId } = useParams();
 
   const { post, loading, error } = useGetPosts(postId);
-
+  console.log("llegamos aqui", post);
   if (loading) return <p>Loading / Cargando</p>;
 
   if (error) return <ErrorMessage message={error} />;

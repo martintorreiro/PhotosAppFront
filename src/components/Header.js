@@ -6,19 +6,27 @@ import photoAppLogo from "../assets/images/photoAppLogo.png";
 export const Header = () => {
   return (
     <header className="mainHeader">
-      <h1 className="appTitle">
-        <img
-          src={photoAppLogo}
-          alt="logo"
-          height="50px"
-          className="headerImage"
-        />
-        <Link to="/">Photos App </Link>
-      </h1>
+      <div>
+        <div className="appTitle">
+          <img
+            src={photoAppLogo}
+            alt="logo"
+            height="50px"
+            className="headerImage"
+          />
+          <h1>
+            <Link to="/">
+              Photos
+              <br />
+              App{" "}
+            </Link>
+          </h1>
+        </div>
 
-      <nav>
-        <Auth />
-      </nav>
+        <nav>
+          <Auth />
+        </nav>
+      </div>
     </header>
   );
 };
