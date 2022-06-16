@@ -32,9 +32,9 @@ export const Register = () => {
   return (
     <section>
       <form onSubmit={handleForm}>
-        <h1>Register</h1>
+        <h1>Register / Registrate</h1>
         <fieldset>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email / Correo electrónico</label>
           <input
             type="email"
             id="email"
@@ -44,7 +44,7 @@ export const Register = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="pass1">Password</label>
+          <label htmlFor="pass1">Password / Contraseña</label>
           <input
             type="password"
             id="pass1"
@@ -54,7 +54,7 @@ export const Register = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="pass2">Repeat Password</label>
+          <label htmlFor="pass2">Repeat Password / Repite la contraseña</label>
           <input
             type="password"
             id="pass2"
@@ -64,7 +64,7 @@ export const Register = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="userName">Username</label>
+          <label htmlFor="userName">Username / Nombre de usuario</label>
           <input
             type="text"
             id="userName"
@@ -73,7 +73,7 @@ export const Register = () => {
             onChange={(e) => setUserName(e.target.value)}
           />
         </fieldset>
-        <button>Register</button>
+        <button>Register / Registrate</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>

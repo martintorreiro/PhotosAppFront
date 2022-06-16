@@ -28,9 +28,9 @@ export const Login = () => {
   return (
     <section>
       <form onSubmit={handleForm}>
-        <h1>Login</h1>
+        <h1>Login / Accede</h1>
         <fieldset>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email / Correo electrónico</label>
           <input
             type="email"
             id="email"
@@ -40,7 +40,7 @@ export const Login = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password / Contraseña</label>
           <input
             type="password"
             id="password"
@@ -50,7 +50,7 @@ export const Login = () => {
           />
         </fieldset>
         <fieldset>
-          <label htmlFor="userName">Username</label>
+          <label htmlFor="userName">Username / Nombre de usuario</label>
           <input
             type="text"
             id="userName"
@@ -59,7 +59,7 @@ export const Login = () => {
             onChange={(e) => setUserName(e.target.value)}
           />
         </fieldset>
-        <button>Login</button>
+        <button>Login / Accede</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>

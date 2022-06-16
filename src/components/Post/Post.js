@@ -43,7 +43,7 @@ export const Post = ({ post }) => {
         </div>
 
         <h3>
-          Place: <span>{post.place}</span>
+          Place / Lugar: <span>{post.place}</span>
         </h3>
       </header>
 
@@ -90,7 +90,7 @@ export const Post = ({ post }) => {
         </div>
         <div>
           <h3>
-            Title:
+            Title / Título:
             <span>
               <Link to={`/post/${post.postId}`}>{post.title} </Link>
             </span>

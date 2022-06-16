@@ -13,20 +13,20 @@ export const Auth = () => {
         </p>
       </li>
       <li>
-        <button onClick={() => logout()}>Logout</button>
+        <button onClick={() => logout()}>Logout / Desconectate</button>
       </li>
     </ul>
   ) : (
     <ul>
       <li>
         <button>
-          <Link to={"/register"}>Register</Link>
+          <Link to={"/register"}>Register / Registrate</Link>
         </button>{" "}
       </li>
 
       <li>
         <button>
-          <Link to={"/user/login"}>Login</Link>
+          <Link to={"/user/login"}>Login / Accede</Link>
         </button>
       </li>
     </ul>

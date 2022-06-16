@@ -8,7 +8,7 @@ export const Home = () => {
   const { posts, loading, error } = usePosts();
   const { user } = useContext(AuthContext);
 
-  if (loading) return <p>loading</p>;
+  if (loading) return <p>Loading... / Cargando...</p>;
   if (error) return <ErrorMessage message={error} />;
 
   return (
